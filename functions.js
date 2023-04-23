@@ -180,13 +180,20 @@ const research1 = cardiologos
 .filter(objeto => objeto.zona === zonaElegida)
 .filter(objeto => objeto.cobertura === coberturaElegida)
 
-
-const contenidoDiv = document.getElementById("respuestaResearch");
-respuestaResearch.innerHTML = "";
-const parrafo = document.createElement("p");  
-parrafo.textContent = "Hemos realizado la busqueda en nuestra base de datos, esta es la respuesta: ";
-contenidoDiv.appendChild(parrafo);
-
+  if (research1.length < 1) {
+    const contenidoDiv = document.getElementById("respuestaResearch");
+    respuestaResearch.innerHTML = "";
+    const parrafo = document.createElement("p");  
+    parrafo.textContent = "Hemos realizado la busqueda en nuestra base de datos, no tenemos medicos que coincidan con su busqueda. ";
+    contenidoDiv.appendChild(parrafo);
+  }
+  else{
+    const contenidoDiv = document.getElementById("respuestaResearch");
+    respuestaResearch.innerHTML = "";
+    const parrafo = document.createElement("p");  
+    parrafo.textContent = "Hemos realizado la busqueda en nuestra base de datos, esta es la respuesta: ";
+    contenidoDiv.appendChild(parrafo);
+  }
 // Creamos la lista con los medicos
 
 const listaMedicos = document.getElementById("listaMedicos");
@@ -210,13 +217,22 @@ else if (medicoElegido === "psiquiatria") {
 const research2 = psiquiatras
 .filter(objeto => objeto.zona === zonaElegida)
 .filter(objeto => objeto.cobertura === coberturaElegida)
-//  console.log(research2);
-
-const contenidoDiv = document.getElementById("respuestaResearch");
-respuestaResearch.innerHTML = "";
-const parrafo = document.createElement("p");  
-parrafo.textContent = "Hemos realizado la busqueda en nuestra base de datos, esta es la respuesta: ";
-contenidoDiv.appendChild(parrafo);
+ console.log(research2);
+  if (research2.length < 1) {
+    const contenidoDiv = document.getElementById("respuestaResearch");
+  respuestaResearch.innerHTML = "";
+  const parrafo = document.createElement("p");  
+  parrafo.textContent = "Hemos realizado la busqueda en nuestra base de datos, no tenemos medicos que coincidan con su busqueda. ";
+  contenidoDiv.appendChild(parrafo);
+    
+  }
+  else{
+  const contenidoDiv = document.getElementById("respuestaResearch");
+  respuestaResearch.innerHTML = "";
+  const parrafo = document.createElement("p");  
+  parrafo.textContent = "Hemos realizado la busqueda en nuestra base de datos, esta es la respuesta: ";
+  contenidoDiv.appendChild(parrafo);
+  }
 
 // Creamos la lista con los medicos
 
@@ -244,12 +260,19 @@ const research3 = odontologos
 .filter(objeto => objeto.zona === zonaElegida)
 .filter(objeto => objeto.cobertura === coberturaElegida)
 //  console.log(research3);
-
-const contenidoDiv = document.getElementById("respuestaResearch");
-respuestaResearch.innerHTML = "";
-const parrafo = document.createElement("p");  
-parrafo.textContent = "Hemos realizado la busqueda en nuestra base de datos, esta es la respuesta: ";
-contenidoDiv.appendChild(parrafo);
+  if (research3.length < 1) {
+    const contenidoDiv = document.getElementById("respuestaResearch");
+    respuestaResearch.innerHTML = "";
+    const parrafo = document.createElement("p");  
+    parrafo.textContent = "Hemos realizado la busqueda en nuestra base de datos, no tenemos medicos que coincidan con su busqueda. ";
+    contenidoDiv.appendChild(parrafo);
+  }
+  else {
+    const contenidoDiv = document.getElementById("respuestaResearch");
+    respuestaResearch.innerHTML = "";
+    const parrafo = document.createElement("p");  
+    parrafo.textContent = "Hemos realizado la busqueda en nuestra base de datos, esta es la respuesta: ";
+    contenidoDiv.appendChild(parrafo); }
 
 // Creamos la lista con los medicos
 
@@ -271,24 +294,4 @@ listaMedicos.appendChild(liZona);
 }
 
 }
-
-//Validacion de formularios
-
-(() => {
-  'use strict'
-
- 
-  const forms = document.querySelectorAll('.needs-validation')
-
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-
-      form.classList.add('was-validated')
-    }, false)
-  })
-})()
 
