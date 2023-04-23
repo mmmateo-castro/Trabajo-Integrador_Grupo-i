@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medify - ¡Encontra profesionales en tu zona!</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+    <nav class="navbar-dark navbar navbar-expand-md navbar-expand-lg">
+        <div class="container-fluid">
+        <!--Agregue icono-->
+        <img src="./svgs/icono.svg">
+        <a class="navbar-brand" href="#">Medify</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item mx-auto">
+                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#logindemo" role="button">Log In</a>
+            </li>
+            <li class="nav-item mx-auto">
+                <a class="nav-link" data-bs-toggle="modal"
+                data-bs-target="#signup" role="button">Sign Up</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#"
+                  id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Nosotros
+                </a>
+                <ul class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#quienesSomos">Quienes
+                      somos!</a></li>
+                  <li><a class="dropdown-item" href="#Contacto">Contacto</a></li>
+                  <li><a class="dropdown-item" href="#Redes">Redes Sociales</a></li>
+                </ul>
+              </li>
+            </ul>
+            <!--Login form-->
+            <div class="modal fade" id="logindemo">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Login</h4>
+                    <!--Borre boton cerrar-->
+                  </div>
+                  <div class="modal-body mx-3">
+                    <form action="#">
+                      <div class="md-form mb-5">
+                        <i class="fa fa-envelope"></i>
+                        <input type="email" class="form-control validate" placeholder="Ingrese su email.">
+                        <label data-error="wrong" data-success="right"
+                          for="email"></label>
+                      </div>
+
+                      <div class="md-form mb-4">
+                        <i class="fa fa-lock"></i>
+                        <input type="password" class="form-control validate" placeholder="Ingrese su contraseña">
+                        <label data-error="wrong" data-success="right"
+                          for="pass"></label>
+                      </div>
+                      <button type="button" class="btn-close-white btn-lg"
+                        data-bs-dismiss="modal" id="login-btn">Login</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Sign up form-->
+          <div class="modal fade" id="signup" role="dialog"
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header text-center">
+                  <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+                  <!--Borre boton cerrar-->
+                </div>
+                <div class="modal-body mx-3">
+                  <div class="md-form mb-5">
+                    <i class="fa fa-user"></i>
+                    <input type="text" class="form-control validate" placeholder="Ingrese su nombre de usuario.">
+                    <label data-error="wrong" data-success="right" for="name"></label>
+                  </div>
+                  <div class="md-form mb-5">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" class="form-control validate" placeholder="Ingrese su email">
+                    <label data-error="wrong" data-success="right" for="email"></label>
+                  </div>
+
+                  <div class="md-form mb-4">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" class="form-control validate" placeholder="Ingrese su contraseña">
+                    <label data-error="wrong" data-success="right" for="pass"></label>
+                  </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                  <button type="button" class="btn-close-white btn-lg"
+                    data-bs-dismiss="modal" id="login-btn">Sign Up</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+    </header>
+
+    <main>
+    <!--Primer banner y barra de busqueda-->
+        <section class="home-search">
+            <h1>Encontra profesionales Online y reserva tu turno!</h1>
+            <br><h4>Puedes encontrarlos por especialidad, ubicacion y cobertura medica.</h4><br>
+            <div class="search-form-section">
+                <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2">
+                    <form class="doc-home-title-form" method="get" action="" data-hs-cf-bound="true">
+                    <div class="row no-gutters">
+                        <div class="col-lg-3 middle-form-control">
+                        <form action="#">
+                            <label for="lang">Especialidad </label>
+                            <select class="form-select" aria-label="Default select example" id="tipoMedico">
+                            <option value="cardiologia">Cardiologia</option>
+                            <option value="psiquiatria">Psiquiatria</option>
+                            <option value="odontologia">Odontologia</option>
+                            </select>
+                        </form>
+                        </div>
+                        <div class="col-lg-3 middle-form-control">
+                        <form action="#">
+                            <label for="lang">Ubicacion
+                            </label>
+                            <select class="form-select" aria-label="Default select example" id="tipoZona">
+                            <option value="norte">Zona Norte</option>
+                            <option value="oeste">Zona Oeste</option>
+                            <option value="sur">Zona Sur</option>
+                            <option value="este">Zona Este</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3 middle-form-control">
+                        <form action="#">
+                            <label for="lang">Cobertura</label>
+                            <select class="form-select" aria-label="Default select
+                                example" id="tipoCoberturaMedica">
+                                <option value="ioma">Ioma</option>
+                                <option value="osde">Osde</option>
+                                <option value="pami">PAMI</option>
+                            </select>
+                            </div>
+                            <div id="submit-btn" class="col-lg-3 middle-form-control">
+                            <button id="submit" class="btn btn-primary"
+                                type="button" onclick="eleccionCliente()">Buscar</button>
+                            </div>
+                            <div id="respuestaResearch"></div>
+                            <div id="listaMedicos"></div>
+                        </div>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+    <!--Como funciona?-->
+      <section class="section-how-to-use">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <h3>Aprende en tres simples pasos cómo funciona!</h3>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-9 step-by-step">
+              <h2>¿Cómo funciona?</h2>
+              <div class="row" id="steps">
+                <div class="col-md-4">
+                  <div class="howContainer">
+                    <img src="./svgs/icons8-1-llave-100.png">
+                    <div class="card-body">
+                      <h2>Busca la especialidad</h2>
+                      <p>Primero debes buscar la especialidad</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="howContainer">
+                    <img src="./svgs/icons8-2-llave-100.png">
+                    <div class="card-body">
+                      <h2>Elige una ubicacion</h2>
+                      <p>Podrás elegir la ubicacion.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="howContainer">
+                    <img src="./svgs/icons8-3-llave-100.png">
+                    <div class="card-body">
+                      <h2>Selecciona tu cobertura medica</h2>
+                      <p>Podras buscar tu cobertura medica.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="howContainer2">
+                    <img src="">
+                    <div class="card-bodyTwo">
+                      <h3>Finaliza presionando el boton</h3>
+                      <p>¡Listo! Veras a los especialistas disponibles.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+          <!--Preguntas frecuentes-->
+          <section class="faq">
+            <h1>Conocenos!</h1>
+            <h3>Preguntas frecuentes</h3>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="row">
+                  <div class="col">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Cual es el coste de las consultas?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Actualmente el coste lo van a cubrir las coberturas medicas. Nosotros solamente somos un intermediario mucho mas veloz que cualquier otro del mercado. </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        ¿Habran mas opciones de coberturas medicas, o solamente planean trabajar con las que ya tienen?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Esperamos en un futuro poder sumar mas coberturas a nuestra web! Estaremos trabajando en ello.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Soy medico especializado en pediatria y me gustaria sumarme al proyecto.¿Tienen pensado agregar mas especialidades?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Por el momento solamente estamos trabajando con estas 3 ramas especificas ya que son las mas consultadas en el pais. En un futuro sumaremos mas profesionales a nuestra web!</div>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="./svgs/engineering_team_a7n2.svg" alt="Texto alternativo" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--Nuevos especialistas-->
+          <section class="register">
+            <div class="container-fluid">
+              <h1>Si te interesa sumarte</h1>
+              <div class="image-container" id="imagen_sumate">
+                <img src="./svgs/sumate.svg" class="img-fluid">
+                <a><button class="btn btn-primary" href="#" type="button"
+                    id="signupFrm">Hacé click aquí</button></a>
+              </div>
+            </div>
+            <!--Boton registro-->
+            <!-- Modal para el formulario de registro -->
+            <div class="modal fade" id="signupModal" tabindex="-1"
+              aria-labelledby="signupModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Registro</h5>
+                    <button type="button" class="btn-close"
+                      data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                  </div>
+                  <div class="modal-body" id="formReg">
+                    <!-- Formulario de registro Staff -->
+                    <form id="profRegister">
+                      <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre2">
+                      </div>
+                      <div class="mb-3">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellido2">
+                      </div>
+                      <div class="mb-3">
+                        <label for="pais">País:</label>
+                        <select id="pais" name="pais">
+                          <option value="">Selecciona un país</option>
+                          <option> Argentina</option>
+                        </select>
+                        <br>
+                        <label for="provincia">provincia:</label>
+                        <select id="provincia" name="provincia">
+                          <option value="">Selecciona una provincia</option>
+                        </select>
+                        <br>
+                        <label for="localidades">Localidad:</label>
+                        <select id="localidades" name="localidades">
+                          <option value="">Selecciona una localidad</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email2">
+                      </div>
+                      <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control"
+                          id="password2">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Registrarse</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+          <!--Aboust us-->
+          <hr>
+          <section class="about-us">
+            <div class="container text-center">
+              <div class="col">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img src="">
+                    <div class="about-us-info">
+                      <h4 id="quienesSomos">Quienes somos</h4>
+                      <p>Somos un grupo de estudiantes, diseñando un frontend
+                        funcional.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <img src="">
+                    <div class="about-us-info">
+                      <h4>Por que elegirnos</h4>
+                      <p>Nos encontramos en proceso de aprendizaje, por lo que
+                        cada dia avanzamos para cumplir los objetivos
+                        requeridos.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <img src="">
+                    <div class="about-us-info">
+                      <h4>Colabora con nosotros</h4>
+                      <!--Agregamos extras ej-->
+                      <a href="https://www.patreon.com/user=es"
+                        style="text-decoration: none; color:black; font-weight:
+                        100%;"> Patreon</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </main>
+
+        <footer>
+          <section class="container-foot">
+            <div class="col mx-auto">
+              <p>
+                <span id="Contacto" style="display: inline-block;
+                  vertical-align: middle;color: white;">Contacto</span>
+                <div class="block-23 mb-3">
+                  <ul class="list-inline" style="list-style: none;">
+                    <li>
+                      <span class="fa fa-phone"></span><span class="text">+54
+                        1111 1111</span>
+                    </li>
+                    <li>
+                      <a id="contactEmail" href="#"><span class="fa
+                          fa-envelope"></span><div><span class="text">info@yourdomain.com</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </p>
+            </div>
+            <div class="col mx-auto">
+              <p>
+                <span id="Redes" style="display: inline-block; vertical-align:
+                  middle; color: white;">Redes sociales</span>
+                <div class="block-23 mb-3">
+                  <ul class="list-inline" style="list-style: none;">
+                    <li>
+                      <a href="https://www.instagram.com/user" target="_blank"
+                        title="instagram">
+                        <img src="./svgs/ig.svg" class="img-fluid" width="5%"
+                          height="5%">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/user" target="_blank"
+                        title="facebook">
+                        <img src="./svgs/facebook.svg" class="img-fluid" width="5%"
+                          height="5%">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </p>
+            </div>
+          </section>
+          <!-- <hr class="p-0 m-0 b-0"> -->
+
+          <section class="last-container">
+            <div class="rights">
+              <p class="text">&copy; 2023 All rights reserved.<p>
+                </div>
+              </section>
+            </footer>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+              integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
+            <script
+              src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+              crossorigin="anonymous"></script>
+            <script
+              src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+              integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+              crossorigin="anonymous"></script>
+            <script src="functions.js"></script>
+          </body>
+        </html>
